@@ -1,0 +1,170 @@
+/* Basic Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e8f5e9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.todo-app {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: left;
+}
+
+/* Search Input */
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background: none;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+/* Filter Buttons */
+.filters {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: #f1f8e9;
+  border: 1px solid #c5e1a5;
+  color: #333;
+}
+
+.filter-btn.active {
+  background-color: #a5d6a7;
+  color: #fff;
+}
+
+/* Task List */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  transition: background-color 0.2s ease;
+}
+
+.task-item.completed {
+  background-color: #e0f2f1;
+  text-decoration: line-through;
+  color: #8bc34a;
+}
+
+.task-item button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #d32f2f;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Add Task Input */
+.add-task-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.add-task-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+}
+
+.add-task-form button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  .todo-app {
+    padding: 30px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .search-bar {
+    padding: 0.75rem;
+  }
+
+  .filter-btn {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .task-item {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .add-task-form input {
+    padding: 0.75rem;
+  }
+
+  .add-task-form button {
+    padding: 0.75rem 1.5rem;
+  }
+}
