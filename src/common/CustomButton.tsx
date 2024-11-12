@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import ShimmerBox from './ShimmerBox';
 
 interface CustomButtonProps {
   onClick: () => void;
@@ -13,11 +15,29 @@ const CustomButton = ({
   className,
   disabled,
 }: CustomButtonProps) => {
-  return (
-    <button onClick={onClick} className={className} disabled={disabled}>
-      {text}
-    </button>
-  );
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(()=> {
+    setLoading(false);
+  }, 5000);
+
+  const ShimmerLoader = () => {
+    return (
+      <div className={`${className} padding-0`}>
+        <ShimmerBox />
+      </div>
+    );
+  }
+
+  const Button = () => {
+    return (
+      <button onClick={onClick} className={className} disabled={disabled}>
+        {text}
+      </button>
+    )
+  }
+
+  return loading ? <ShimmerLoader /> : <Button />
 };
 
 export default CustomButton;

@@ -1,0 +1,19 @@
+@keyframes shimmer {
+    to {
+        background-position-x: 0%
+    }
+}
+
+.shimmer-ui {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-90deg, #eee 40%, #fafafa 50%, #eee 60%);
+    background-size: 300%;
+    background-position-x: 100%;
+    animation: shimmer 1s infinite linear;
+    border-radius: inherit;
+}
+
+.padding-0 {
+    padding: 0 !important;
+}
