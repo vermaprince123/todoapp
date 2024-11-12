@@ -1,18 +1,29 @@
-import React from 'react';
-import { Task } from '../types';
-import { useTaskContext } from '../context/TaskContext';
+// TaskItem.tsx
+import React from "react";
+import { Task } from "../types";
+import { useTaskContext } from "../context/TaskContext";
 
-const TaskItem: React.FC<{ task: Task }> = ({ task }) => {
-  const { toggleTask, deleteTask } = useTaskContext();
+interface TaskItemProps {
+  task: Task;
+  onDelete: () => void;
+}
+
+const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete }) => {
+  const { toggleTask } = useTaskContext();
 
   return (
-    <li>
-      <span onClick={() => toggleTask(task.id)} style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+    <li className={`task-item ${task.completed ? "completed" : ""}`}>
+      <span
+        onClick={() => toggleTask(task.id)}
+      >
         {task.text}
       </span>
-      <button onClick={() => deleteTask(task.id)}>Delete</button>
+      <button className="delete-btn" onClick={onDelete}>
+        X
+      </button>
     </li>
   );
 };
 
 export default TaskItem;
+

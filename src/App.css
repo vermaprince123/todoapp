@@ -1,170 +1,180 @@
-/* Basic Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* General Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #e8f5e9;
-  color: #333;
+/* Main Container */
+.app-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
-
-/* Container */
-.todo-app {
-  background-color: #fff;
-  border-radius: 16px;
+  background-color: #e5f3e7;
   padding: 20px;
-  width: 90%;
+}
+
+/* Todo App Container */
+.todo-app {
+  width: 100%;
   max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-  font-size: 1.5rem;
+/* Header */
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
   color: #333;
-  text-align: left;
 }
 
-/* Search Input */
+/* Search Bar */
 .search-bar {
   display: flex;
   align-items: center;
-  padding: 0.5rem;
-  border-radius: 8px;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
+  margin-bottom: 10px;
 }
 
 .search-bar input {
-  border: none;
-  outline: none;
   width: 100%;
-  font-size: 1rem;
-  padding: 0.5rem;
-  background: none;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
 }
 
-.search-bar input::placeholder {
-  color: #aaa;
+.search-bar input:focus {
+  border-color: #5fba7d;
 }
 
 /* Filter Buttons */
-.filters {
+.filter-btns {
   display: flex;
-  justify-content: space-around;
-  gap: 0.5rem;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .filter-btn {
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  background-color: #f1f8e9;
-  border: 1px solid #c5e1a5;
-  color: #333;
+  font-size: 14px;
 }
 
 .filter-btn.active {
-  background-color: #a5d6a7;
+  background-color: #5fba7d;
   color: #fff;
+}
+
+.filter-btn:not(.active) {
+  background-color: #e0e0e0;
+  color: #333;
 }
 
 /* Task List */
 .task-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  list-style-type: none;
+  margin-bottom: 20px;
 }
 
 .task-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  transition: background-color 0.2s ease;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
 }
 
 .task-item.completed {
-  background-color: #e0f2f1;
+  background-color: #d3f0dc;
   text-decoration: line-through;
-  color: #8bc34a;
 }
 
-.task-item button {
-  background: none;
+.task-name {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.delete-btn {
+  background: transparent;
   border: none;
-  font-size: 1.2rem;
-  color: #d32f2f;
+  font-size: 18px;
+  color: #ff5c5c;
   cursor: pointer;
-  padding: 0;
+  text-decoration: none;
 }
 
-/* Add Task Input */
+.delete-btn:hover {
+  color: #d43f3f;
+}
+
+/* Add Task Form */
 .add-task-form {
   display: flex;
-  gap: 0.5rem;
+  gap: 10px;
+  margin: 10px 0 10px 0;
 }
 
 .add-task-form input {
   flex: 1;
-  padding: 0.5rem;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   outline: none;
 }
 
 .add-task-form button {
-  padding: 0.5rem 1rem;
+  padding: 10px;
+  font-size: 16px;
   background-color: #333;
   color: #fff;
-  border-radius: 8px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-/* Responsive Layout */
-@media (min-width: 768px) {
+.add-task-form button:hover {
+  background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
   .todo-app {
-    padding: 30px;
+    max-width: 100%;
   }
 
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .search-bar {
-    padding: 0.75rem;
+  .header {
+    font-size: 20px;
   }
 
   .filter-btn {
-    padding: 0.75rem 1.5rem;
+    font-size: 12px;
+    padding: 6px 10px;
   }
 
   .task-item {
-    padding: 0.75rem 1.5rem;
+    padding: 8px;
   }
 
-  .add-task-form input {
-    padding: 0.75rem;
+  .task-name {
+    font-size: 14px;
   }
 
+  .add-task-form input,
   .add-task-form button {
-    padding: 0.75rem 1.5rem;
+    font-size: 14px;
+    padding: 8px;
   }
 }

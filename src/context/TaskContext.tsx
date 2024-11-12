@@ -4,8 +4,8 @@ import { Task, FilterType } from '../types';
 type TaskContextProps = {
   tasks: Task[];
   addTask: (text: string) => void;
-  toggleTask: (id: string) => void;
-  deleteTask: (id: string) => void;
+  toggleTask: (id: number) => void;
+  deleteTask: (id: number) => void;
   filter: FilterType;
   setFilter: (filter: FilterType) => void;
 };
@@ -31,15 +31,15 @@ export const TaskProvider: React.FC<TaskProviderProps> = ({ children }) => {
 
   const addTask = (text: string) => {
     if (text.trim()) {
-      setTasks(prev => [...prev, { id: Date.now().toString(), text, completed: false }]);
+      setTasks(prev => [...prev, { id: Date.now(), text, completed: false }]);
     }
   };
 
-  const toggleTask = (id: string) => {
+  const toggleTask = (id: number) => {
     setTasks(prev => prev.map(task => (task.id === id ? { ...task, completed: !task.completed } : task)));
   };
 
-  const deleteTask = (id: string) => {
+  const deleteTask = (id: number) => {
     setTasks(prev => prev.filter(task => task.id !== id));
   };
 
