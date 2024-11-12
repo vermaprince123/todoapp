@@ -15,7 +15,7 @@ const SearchBar: React.FC<{ onSearch: (term: string) => void }> = ({ onSearch })
                 value={term}
                 onChange={(e) => setTerm(e.target.value)}
                 placeholder="Search tasks..." 
-            />;
+            />
         </div>
     )
 };
