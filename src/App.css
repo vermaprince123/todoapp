@@ -100,13 +100,16 @@
 
 .task-item.completed {
   background-color: #d3f0dc;
-  text-decoration: line-through;
 }
 
 .task-name {
   flex: 1;
   margin-left: 10px;
   font-size: 16px;
+}
+
+.task-name.completed {
+  text-decoration: line-through;
 }
 
 .delete-btn {

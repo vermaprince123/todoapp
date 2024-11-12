@@ -14,6 +14,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete }) => {
   return (
     <li className={`task-item ${task.completed ? "completed" : ""}`}>
       <span
+        className={`task-name ${task.completed ? "completed" : ""}`}
         onClick={() => toggleTask(task.id)}
       >
         {task.text}
