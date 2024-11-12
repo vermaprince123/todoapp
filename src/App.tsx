@@ -15,14 +15,16 @@ const App: React.FC = () => {
   };
 
   return (
+    <div className="app-container">
     <div className="todo-app">
-    <TaskProvider>
-      <h1>To-Do List</h1>
-      <AddTaskForm />
-      <SearchBar onSearch={handleSearch} />
-      <Filter />
-      <TaskList />
-    </TaskProvider>
+      <TaskProvider>
+        <h1>To-Do List</h1>
+        <AddTaskForm />
+        <SearchBar onSearch={handleSearch} />
+        <Filter />
+        <TaskList />
+      </TaskProvider>
+    </div>
     </div>
   );
 };

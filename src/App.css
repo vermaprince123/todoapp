@@ -5,6 +5,9 @@
   box-sizing: border-box;
 }
 
+#root{
+}
+
 /* Main Container */
 .app-container {
   display: flex;
