@@ -1,0 +1,23 @@
+.filter-btns {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-btn.active {
+  background-color: #5fba7d;
+  color: #fff;
+}
+
+.filter-btn:not(.active) {
+  background-color: #e0e0e0;
+  color: #333;
+}

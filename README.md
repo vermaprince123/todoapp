@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# Task Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple task management application built with **React** and **TypeScript**, allowing users to manage tasks with basic functionality and features such as adding, completing, deleting, and filtering tasks. It also includes a search feature with debounce and uses React Context API for state management and `localStorage` for persistence.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Add a task**: Users can add new tasks to the list.
+- **Mark a task as complete**: Users can mark tasks as completed.
+- **Delete a task**: Users can delete tasks from the list.
+- **Filter tasks**: Users can filter tasks by:
+  - "All"
+  - "Completed"
+  - "Incomplete"
+- **Search tasks**: Users can search through tasks with a debounce feature to improve performance.
+- **Responsive Layout**: The app is fully responsive and works on both desktop and mobile screens.
+- **State Management**: Uses **React Context API** for managing application state.
+- **Data Persistence**: Tasks are stored in `localStorage` so that they persist even after a page reload.
 
-### `npm start`
+### Bonus
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Undo-Redo functionality**: Users can undo and redo changes to tasks.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Requirements
 
-### `npm test`
+- TypeScript (for type safety)
+- React (with hooks like `useState`, `useEffect`)
+- Basic form validation (prevent adding empty tasks)
+- React Context API for state management
+- `localStorage` for data persistence
+- Responsive design (mobile and desktop)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To run the application locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone <repository-url>
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install the dependencies:
 
-### `npm run eject`
+   ```bash
+   cd todo-app
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Run the application:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The app will be available at `http://localhost:3000`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License.

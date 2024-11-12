@@ -1,0 +1,1 @@
+node_modules/.bin/webpack --mode production --env targetEnv=$targetEnv --env targetEnvProfile=$targetEnvProfile --progress

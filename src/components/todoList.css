@@ -1,0 +1,43 @@
+/* Task List */
+.task-list {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+.task-item.completed {
+  background-color: #d3f0dc;
+}
+
+.task-name {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.task-name.completed {
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #ff5c5c;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.delete-btn:hover {
+  color: #d43f3f;
+}

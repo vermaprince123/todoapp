@@ -1,26 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "target": "es6", // Specifies the target JavaScript version
+    "module": "CommonJS", // Module code generation method
+    "strict": true, // Enables strict type checking
+    "esModuleInterop": true, // Enables compatibility between CommonJS and ES Modules
+    "skipLibCheck": true // Skips type checking of declaration files
   },
   "include": [
-    "src"
+    "src/**/*.ts" // Specifies the files to include in the compilation
+  ],
+  "exclude": [
+    "node_modules" // Excludes the node_modules directory
   ]
 }
