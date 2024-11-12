@@ -51,7 +51,7 @@ const TodoAddForm = () => {
         onKeyDown={handleKeyDown}
       />
       {error && <CustomErrorMessage error={error} />}
-      <CustomButton onClick={handleAddTask} text={ADD_TODO_FORM_BUTTON_TEXT} />
+      <CustomButton className="add-task-form-button" onClick={handleAddTask} text={ADD_TODO_FORM_BUTTON_TEXT} />
     </div>
   );
 };
