@@ -17,3 +17,9 @@
 .search-bar input:focus {
   border-color: #5fba7d;
 }
+
+@media (max-width: 655px) {
+  .search-bar {
+    width: 100%;
+  }
+}
