@@ -12,21 +12,21 @@
   height: 40px;
   align-items: center;
   width: 100%;
-  max-width: 280px; /* Adjust this width as needed */
+  max-width: 280px; 
   border: 1px solid #ccc;
-  border-radius: 25px; /* Rounded edges for the container */
+  border-radius: 25px; 
   padding: 10px 15px;
   background-color: #fff;
-  box-sizing: border-box; /* Ensure padding and border are included in width */
-  overflow: hidden; /* Prevent any child from overflowing */
+  box-sizing: border-box; 
+  overflow: hidden;
 }
 
 .search-bar input {
-  flex: 1; /* Input takes up remaining space */
+  flex: 1;
   border: none;
   outline: none;
   font-size: 16px;
-  padding: 5px 0; /* Vertical padding */
+  padding: 5px 0;
 }
 
 .search-bar input:focus {
@@ -34,8 +34,8 @@
 }
 
 .search-icon {
-  color: #aaa; /* Icon color */
-  margin-right: 10px; /* Space between icon and input */
+  color: #aaa;
+  margin-right: 10px;
   margin-top: 6px;
   font-size: 18px;
 }

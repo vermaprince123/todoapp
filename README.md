@@ -20,30 +20,29 @@ This is a simple task management application built with **React** and **TypeScri
 
 - **Undo-Redo functionality**: Users can undo and redo changes to tasks.
 
-## Requirements
+## Tech Stack Used
 
 - TypeScript (for type safety)
 - React (with hooks like `useState`, `useEffect`)
 - Basic form validation (prevent adding empty tasks)
 - React Context API for state management
 - `localStorage` for data persistence
-- Responsive design (mobile and desktop)
 
-## Installation
+## Installation and Use
 
 To run the application locally, follow these steps:
 
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   gh repo clone vermaprince123/todoapp
    ```
 
 2. Install the dependencies:
 
    ```bash
    cd todo-app
-   npm install
+   npm i
    ```
 
 3. Run the application:
@@ -54,6 +53,3 @@ To run the application locally, follow these steps:
 
 The app will be available at `http://localhost:3000`.
 
-## License
-
-This project is licensed under the MIT License.
