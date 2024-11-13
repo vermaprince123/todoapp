@@ -1,9 +1,8 @@
-/* Task List */
-
 /*---SCROLL BAR----*/
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 /* Track */
@@ -19,11 +18,12 @@
 }
 
 .task-list {
-  height: 40vh;
+  height: '100%';
   overflow-y: scroll;
   list-style-type: none;
   margin-bottom: 20px;
   padding-right: 5px;
+  margin-right: 10px;
 }
 
 .task-list-loader {
@@ -42,13 +42,12 @@
   background-color: #f9f9f9;
 }
 
-
 .task-item.completed {
   background-color: #d3f0dc;
   border: green solid 1px;
 }
 
-.task-item-check-box{
+.task-item-check-box {
   border: solid #ccc 1.5px;
   width: 16px;
   height: 16px;
@@ -60,7 +59,7 @@
   color: green;
 }
 
-.task-item-check-box.completed{
+.task-item-check-box.completed {
   border: solid green 1.5px;
 }
 
@@ -85,4 +84,13 @@
 
 .delete-btn:hover {
   color: #d43f3f;
+}
+
+.task-item-content {
+  display: flex;
+  cursor: pointer;
+}
+
+.main-container-list {
+  height: 40vh;
 }

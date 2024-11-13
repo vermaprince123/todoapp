@@ -1,7 +1,7 @@
 import path from 'path';
 import CopyPlugin from 'copy-webpack-plugin';
 
-module.exports = (env, argv) => {
+module.exports = () => {
   return {
     entry: {
       main: path.resolve(__dirname, 'src/index.tsx'), // Update entry to TypeScript
@@ -13,6 +13,17 @@ module.exports = (env, argv) => {
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js'], // Resolve TypeScript files
+    },
+    devServer: {
+      port: 3004,
+      devMiddleware: {},
+      static: {
+        directory: path.join(__dirname, `build/`),
+        watch: false,
+      },
+      https: true,
+      historyApiFallback: true,
+      allowedHosts: 'all',
     },
     module: {
       rules: [
@@ -38,6 +49,24 @@ module.exports = (env, argv) => {
           use: ['style-loader', 'css-loader'],
         },
       ],
+    },
+    optimization: {
+      minimize: true,
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.css$/,
+            chunks: 'all',
+            enforce: true,
+          },
+          vendor: {
+            test: /[\\/]node_modules[\\/](react|react-dom|react-window|react-virtualized-auto-sizer|react-router-dom|)[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+        },
+      },
     },
     plugins: [
       new CopyPlugin([

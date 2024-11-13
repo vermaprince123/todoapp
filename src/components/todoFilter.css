@@ -4,6 +4,8 @@
   width: 30%;
   height: 22px;
   border-radius: 5px;
+  align-self: flex-end;
+  margin-bottom: 10px;
 }
 
 .filter-btn {
@@ -23,4 +25,11 @@
 .filter-btn:not(.active) {
   background-color: #e0e0e0;
   color: #333;
+}
+
+@media (max-width: 655px) {
+  .filter-btns {
+    align-self: flex-start;
+    margin-bottom: 0;
+  }
 }

@@ -1,38 +1,34 @@
-import React, { useState } from 'react';
-import TodoItem from './TadoItem';
-import ShimmerBox from '../common/ShimmerBox';
+import React from 'react';
+import TodoItem from './TodoItem';
 import { useTodoContext } from '../context/TodoContext';
+import withLoadingList from '../hoc/withLoadingList';
+import { Todo } from '../services/interface/Todo';
 import './todoList.css';
-import { generateRandomId } from '../utils/fn';
+
+const EnhancedList = withLoadingList(
+  ({ items, itemRenderer }: { items: Todo[]; itemRenderer: any }) => {
+    return items.map((item: Todo, index: number) => itemRenderer(item, index));
+  }
+);
+
+/**
+ * Renders a list of todo items with the ability to delete them.
+ * The list is enhanced with a higher-order component that handles loading state.
+ * The todo items are filtered based on the context's `filterTodos` function.
+ */
 const TodoList = () => {
-  const [loading, setLoading] = useState(true);
   const { filterTodos, deleteTodo } = useTodoContext();
 
-  setTimeout(() => setLoading(false), 4000);
-
-  const TaskList = () => {
-    return (
-      <div className="task-list">
-      {filterTodos.map((todo) => (
-        <TodoItem
-          key={generateRandomId()}
-          todo={todo}
-          onDelete={() => deleteTodo(todo.id)}
-        />
-      ))}
-    </div>
-    )
-  }
-
-  const ShimmerLoader = () => {
-    return (<div className="task-list-loader">
-      <ShimmerBox />
-    </div>
-    );
-  }
+  const renderTodoItem = (todo: Todo) => (
+    <TodoItem todo={todo} onDelete={() => deleteTodo(todo.id)} />
+  );
 
   return (
-    loading ? <ShimmerLoader /> : <TaskList/>
+    <EnhancedList
+      items={filterTodos}
+      itemSize={60}
+      itemRenderer={renderTodoItem}
+    />
   );
 };
 

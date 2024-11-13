@@ -12,8 +12,8 @@ interface TodoContextType {
   searchTodo: string;
   setSearchTodo: (todos: string) => void;
   addTodo: (todos: Todo) => void;
-  deleteTodo: (id: number) => void;
-  toggleTodoCompletion: (id: number) => void;
+  deleteTodo: (id: string) => void;
+  toggleTodoCompletion: (id: string) => void;
 }
 
 const TodoContext = createContext<TodoContextType | undefined>(undefined);
@@ -35,7 +35,7 @@ export const TodoProvider = ({ children }: React.PropsWithChildren) => {
     });
   };
 
-  const deleteTodo = (id: number) => {
+  const deleteTodo = (id: string) => {
     setTodos((prevTodo) => {
       const newTodo = prevTodo.filter((todo) => todo.id !== id);
       saveTodosToLocalStorage(newTodo);
@@ -43,7 +43,7 @@ export const TodoProvider = ({ children }: React.PropsWithChildren) => {
     });
   };
 
-  const toggleTodoCompletion = (id: number) => {
+  const toggleTodoCompletion = (id: string) => {
     setTodos((prevTodo) => {
       const newTodo = prevTodo.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo

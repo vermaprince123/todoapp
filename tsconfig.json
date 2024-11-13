@@ -8,7 +8,9 @@
     "skipLibCheck": true // Skips type checking of declaration files
   },
   "include": [
-    "src/**/*.ts" // Specifies the files to include in the compilation
+    "test/**/*.ts", // Specifies the files to include in the compilation
+    "src/**/*.ts", // Specifies the files to include in the compilation
+    "test/CustomButton.test.js"
   ],
   "exclude": [
     "node_modules" // Excludes the node_modules directory
