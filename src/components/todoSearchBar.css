@@ -1,8 +1,8 @@
 /* Search Bar */
 .search-bar {
+  flex: 4;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .search-bar input {
@@ -10,7 +10,7 @@
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   outline: none;
 }
 

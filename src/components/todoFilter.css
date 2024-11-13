@@ -1,20 +1,18 @@
 .filter-btns {
+  flex: 1;
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  width: 40%;
+  gap: 5px;
+  width: 30%;
   height: 100%;
 }
 
 .filter-btn {
-  padding: 8px 12px;
+  padding: 4px 5px;
   box-sizing: border-box;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
-  width: 40%;
-  height: 35px;
+  font-size: 12px;
 }
 
 .filter-btn.active {

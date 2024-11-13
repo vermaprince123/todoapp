@@ -16,12 +16,15 @@ const TodoItem = ({ todo, onDelete }: TodoItemProps) => {
   const className = completed ? 'completed' : '';
   return (
     <li className={`task-item ${className}`}>
+      <div className={`task-item-check-box ${className}`}>
+        {completed ? "✔" : ""}
+      </div>
       <CustomSpan
-        className={`task-name ${className}`}
+        className="task-name"
         text={text}
         onClick={() => toggleTodoCompletion(id)}
       />
-      <CustomButton onClick={onDelete} text="X" className="delete-btn" />
+      <CustomButton onClick={onDelete} text="⨯" className="delete-btn" />
     </li>
   );
 };

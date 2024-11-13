@@ -45,6 +45,23 @@
 
 .task-item.completed {
   background-color: #d3f0dc;
+  border: green solid 1px;
+}
+
+.task-item-check-box{
+  border: solid #ccc 1.5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+}
+
+.task-item-check-box.completed{
+  border: solid green 1.5px;
 }
 
 .task-name {
@@ -60,8 +77,8 @@
 .delete-btn {
   background: transparent;
   border: none;
-  font-size: 18px;
-  color: #ff5c5c;
+  font-size: 20px;
+  color: #a5a4a4;
   cursor: pointer;
   text-decoration: none;
 }

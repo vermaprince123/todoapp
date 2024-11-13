@@ -16,8 +16,6 @@ const Layout = () => {
       <div className="app-container">
         <div className="todo-app">
           <TodoHeader title={HEADER_TITLE} />
-          <TodoSearchBar />
-          <TodoFilter />
           <TodoList />
           <TodoAddForm />
         </div>

@@ -10,6 +10,7 @@ const TodoFilter = () => {
   const isActive = (status: string) => (status === filter ? 'active' : '');
   const getClass = (status: string) => `filter-btn ${isActive(status)}`;
 
+  
   return (
     <div className="filter-btns">
       <CustomButton
